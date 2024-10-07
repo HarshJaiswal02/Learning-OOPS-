@@ -10,3 +10,7 @@ Friend function can access any of the member of class to which it is friend. It 
 It has no caller object
 
 It should not be defined with membership label
+
+Benefit of friend function. 
+1. friend function can become friend to more than one class.
+2. overloading of operators using friend function.
