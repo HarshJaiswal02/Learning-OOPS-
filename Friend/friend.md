@@ -14,3 +14,4 @@ It should not be defined with membership label
 Benefit of friend function. 
 1. friend function can become friend to more than one class.
 2. overloading of operators using friend function.
+3. Member function of one class can become a friend of another class

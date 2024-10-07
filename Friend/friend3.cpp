@@ -20,12 +20,44 @@ public:
     friend Complex operator+(Complex, Complex);
 
     friend void display(Complex);
+
+    friend Complex operator-(Complex);
+
+    friend Complex operator--(Complex);
+
+    friend Complex operator--(Complex, int);
 };
 
 void display(Complex X)
 {
     cout << "Real: " << X.r << " Imaginary: " << X.i << endl;
 }
+
+Complex operator-(Complex X)
+{
+    Complex ans;
+    ans.r = -X.r;
+    ans.i = -X.i;
+    return ans;
+}
+
+Complex operator--(Complex X)
+{
+    Complex ans;
+    ans.r = --X.r;
+    ans.i = --X.i;
+    return ans;
+}
+
+Complex operator--(Complex X, int)
+{
+    Complex ans;
+    ans.r = X.r--;
+    ans.i = X.i--;
+    return ans;
+}
+
+
 Complex operator+(Complex X, Complex Y)
 {
     Complex ans;
@@ -33,6 +65,7 @@ Complex operator+(Complex X, Complex Y)
     ans.i = X.i + Y.i;
     return ans;
 }
+
 int main()
 {
     Complex o1(2, 5), o2(4, 4);
@@ -40,6 +73,20 @@ int main()
     display(o2);
     Complex c3 = o1 + o2;
     display(c3);
+    c3 = -c3; // unary in
+    display(c3);
+
+    Complex c4;
+    Complex c5;
+
+    c4 = --o1;
+    c5 = o2--;
+
+    display(c4);
+    display(c5);
+
+    display(o1);
+    display(o2);
 
     return 0;
 }
