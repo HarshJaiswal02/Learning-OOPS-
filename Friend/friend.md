@@ -6,6 +6,7 @@ friend return-type functionName(){...}
 It must be defined outside the class
 
 Friend function can access any of the member of class to which it is friend. It cannot access members of the class directly.
+Through the object of that class it can access.
 
 It has no caller object
 
